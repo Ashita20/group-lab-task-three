@@ -17,7 +17,7 @@ self.addEventListener('install', (e) => {
    );
 });
 
-/*self.addEventListener('fetch', function (e) {
+self.addEventListener('fetch', function (e) {
     e.respondWith(
         //check if the cache has the file
         caches.match(e.request).then(function (r) {
@@ -26,9 +26,9 @@ self.addEventListener('install', (e) => {
             return r
         })
     );
-});*/
+});
 
-self.addEventListener('fetch', function (e) {​​
+/*self.addEventListener('fetch', function (e) {​​
 
     e.respondWith(
 
@@ -54,5 +54,5 @@ self.addEventListener('fetch', function (e) {​​
 
     );
 
-}​​);
+}​​);*/
 
