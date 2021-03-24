@@ -1,0 +1,43 @@
+/* CSS file for lab-task*/
+body
+{
+    padding : 20px;
+    margin : 20px;
+    background-image : url("lesson-bg.jpg");
+    background-size : cover;
+}
+
+h1, h2, p
+{
+    text-align:center;
+}
+
+p
+{
+    font-size: 20px;
+}
+
+button
+{
+    position:relative;
+    left: 35%;
+    font-size: 16px;
+}
+
+img
+{
+    position:relative;
+    left: 20%;
+}
+
+#app
+{
+    padding : 20px;
+    margin : 20px;
+    border : 2px solid black;
+    width : 25%;
+    position : relative;
+    left : 30%;
+    background-color: rgb(219, 217, 213);
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Lab Task (After School Lessons) </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href = "lab-task.css" rel = "stylesheet" type = "text/css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <figure>
+                <img v-bind:src="subject.image">
+            </figure>
+            <h2 v-text="subject.title"></h2>
+            <p v-text="subject.location"></p>
+            <p> Price: AED {{subject.price}} </p>
+            <!--when subject is added to cart, one space is reduced-->
+            <p> Available Spaces: {{subject.availableSpaces - cartItemCount}} </p> 
+            <p> Lessons Added: {{cartItemCount}} </p>
+            <!--Add to Cart button-->
+            <button v-on:click="addToCart"
+                v-if="canAddToCart">
+                Add to cart 
+            </button>
+            <!--Button is disabled when there are no spaces left-->
+            <button disabled='disabled' v-else>
+                Add to cart
+            </button>
+        </main>
+    </div>
+
+    <script>
+        var school = new Vue ({
+            el: '#app',
+            //Science subject information
+            data: {
+                sitename: 'After School Lessons',
+                subject: {
+                    id: 1,
+                    title: "Science",
+                    location: "Dubai",
+                    price: 500,
+                    image: "science.png" ,
+                    availableSpaces: 5
+                },
+                cart:[]
+            },
+            methods: {
+                //add to cart method
+                addToCart: function () {
+                    this.cart.push(this.subject.id);
+                }
+            },
+            computed: {
+                cartItemCount: function () {
+                    return this.cart.length;
+                },
+                //checks if there are available spaces remaining
+                canAddToCart: function () {
+                    return this.subject.availableSpaces > this.cartItemCount;
+                }
+            },
+        });
+    </script>
+</body>
+</html>
