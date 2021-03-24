@@ -1,0 +1,17 @@
+{
+    "name": "After School Lessons",
+    "origin": "*",
+    "short_name": "lessons",
+    "methods": "GET,HEAD,PUT,PATCH,HOST,DELETE",
+    "description": "after school online lessons",
+    "icons": [
+        {
+            "src": "Images/lesson-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "lab-task.html",
+    "display": "fullscreen",
+    "background_color": "#DBD9D5"
+}
